@@ -38,7 +38,7 @@ public class UserValidate {
         return m.matches();
     }
     public static boolean isValidPassword(String password) {
-        String regexPassword = "^[a-z A-z]{8,}$";
+        String regexPassword = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
         Pattern p = Pattern.compile(regexPassword);
         if ( password == null ){
             return false;
