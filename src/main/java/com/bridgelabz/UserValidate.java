@@ -27,6 +27,16 @@ public class UserValidate {
         return m.matches();
 
     }
+    public static boolean isValidMobileNum(String mobileNum) {
+        String regexMobileNum = "^[9][1]\\s[6-9]{1}[0-9]{9}$";
+        Pattern p = Pattern.compile(regexMobileNum);
+        if ( mobileNum == null ){
+            return false;
+        }
+        Matcher m = p.matcher(mobileNum);
+
+        return m.matches();
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to the username validation program.");
@@ -43,6 +53,10 @@ public class UserValidate {
         System.out.print("Please enter the your Email ID: ");
         String emailID = input.nextLine();
         System.out.println(isValidEmail(emailID));
+
+        System.out.print("Please enter the your mobile with country code 91: ");
+        String mobileNo = input.nextLine();
+        System.out.println(isValidMobileNum(mobileNo));
     }
 
 
